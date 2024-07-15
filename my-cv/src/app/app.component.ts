@@ -67,7 +67,7 @@ export class AppComponent {
       { rating: 8.5, description: 'Programming: Angular TS' },
       { rating: 7.5, description: 'Database: MSSQL' },
       { rating: 8.5, description: 'Version Control Tool: GitHub' },
-      { rating: 8, description: 'Programming: RESTFulAPI' },
+      { rating: 8, description: 'RESTful API' },
       { rating: 8, description: 'Html, CSS' },
       { rating: 8.5, description: 'Project Management: Jira' },
     ];

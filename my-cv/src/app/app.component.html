@@ -74,9 +74,11 @@
     <h1>Skills Rating</h1>
     <div class="skills-grid">
       <div *ngFor="let skill of skills" class="skill-item">
-        <div class="skill-number">{{ skill.rating }}</div>
+        <div class="skill-number">
+          <strong>{{ skill.rating }}</strong>
+        </div>
         <div class="skill-description">
-          <strong>{{ skill.description }}</strong>
+          <label>{{ skill.description }}</label>
         </div>
       </div>
     </div>
