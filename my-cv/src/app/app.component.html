@@ -1,0 +1,93 @@
+<div class="MainContainer">
+  <header class="TitleContainer">
+    <nav>
+      <ul>
+        @for (title of titles; track $index) {
+        <li>
+          <a
+            [ngClass]="{ clicked: isTitleClicked($index) }"
+            [href]="'#' + this.title"
+            (click)="onTitleClick($index, $event)"
+            >{{ title }}</a
+          >
+        </li>
+        }
+      </ul>
+    </nav>
+  </header>
+  <div class="ProfileCard">
+    <img class="ProfileImage" />
+    <h2>{{ FullName }}</h2>
+    <p style="font-size: 20px; font-weight: 300">{{ Name }}</p>
+    <p>{{ PhNo }}</p>
+    <p style="color: rgb(22, 106, 242)">
+      <u>{{ gmail }}</u>
+    </p>
+  </div>
+</div>
+
+<div class="MainContent">
+  <section id="Work Experience" class="ExpContainer">
+    <h1>Work Experience</h1>
+    <label><i>Dec 2021 - June 2024</i></label>
+    <h2>Software Engineer</h2>
+    <label>Makino Asia Pte. Ltd, Singapore, SG</label>
+    <div>
+      <ul>
+        @for(exp of workExperiencePoints; track $index){
+        <li>{{ exp }}</li>
+        }
+      </ul>
+    </div>
+
+    <label><i>June 2016 - Feb 2019</i></label>
+    <h2>Project Assistant Engineer</h2>
+    <label>Skywave Solutions Pte.Ltd, Singapore, SG</label>
+    <div>
+      <ul>
+        @for(exp2 of workExperience2Points; track $index){
+        <li>{{ exp2 }}</li>
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section id="Education" class="ExpContainer">
+    <h1>Education</h1>
+    <!--Cert-1-->
+    <label><i> Mar 2019 - Oct 2021 </i></label>
+    <h2>BSc in Computer Science</h2>
+    <label>SIM Global Education - University of Wollongong</label>
+    <ul>
+      <li>Major in Digital System Security(Credit)</li>
+    </ul>
+    <div style="margin: 5px"></div>
+    <label><i> April 2013 - May 2016</i></label>
+    <h2>Diploma in Electronic and Electrical Engineering</h2>
+    <label>Republic Polytechnic</label>
+    <ul>
+      <li>GPA (3.5/4.0)</li>
+    </ul>
+  </section>
+
+  <section id="Skills" class="ExpContainer">
+    <h1>Skills Rating</h1>
+    <div class="skills-grid">
+      <div *ngFor="let skill of skills" class="skill-item">
+        <div class="skill-number">{{ skill.rating }}</div>
+        <div class="skill-description">
+          <strong>{{ skill.description }}</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Language" class="ExpContainer">
+    <h1>Language</h1>
+    <ul>
+      @for(lang of languages; track $index){
+      <li>{{ lang.description }}</li>
+      }
+    </ul>
+  </section>
+</div>
